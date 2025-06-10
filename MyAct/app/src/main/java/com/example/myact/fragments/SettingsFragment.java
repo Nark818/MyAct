@@ -42,7 +42,6 @@ public class SettingsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
 
         // Initialize views
-        textViewDate = view.findViewById(R.id.text_view_date);
         switchDarkTheme = view.findViewById(R.id.switch_dark_theme);
         switchReminders = view.findViewById(R.id.switch_reminders);
         buttonBackupData = view.findViewById(R.id.button_backup_data);
@@ -55,9 +54,6 @@ public class SettingsFragment extends Fragment {
         sharedPreferences = getActivity().getPreferences(AppCompatActivity.MODE_PRIVATE);
         backupRestoreHelper = new BackupRestoreHelper(getContext());
 
-        // Display current date and time
-        displayCurrentDateTime();
-
         // Set up current preferences
         setupPreferences();
 
@@ -67,10 +63,6 @@ public class SettingsFragment extends Fragment {
         return view;
     }
 
-    private void displayCurrentDateTime() {
-        // Set the current datetime value (provided by user)
-        textViewDate.setText("2025-06-10 14:35:49");
-    }
 
     private void setupPreferences() {
         // Dark theme preference

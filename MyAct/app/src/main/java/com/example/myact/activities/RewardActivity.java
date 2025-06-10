@@ -2,13 +2,12 @@ package com.example.myact.activities;
 
 import android.os.Bundle;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.ProgressBar;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.appcompat.widget.Toolbar;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions;
@@ -17,6 +16,7 @@ import com.example.myact.api.ApiClient;
 import com.example.myact.api.ApiService;
 import com.example.myact.api.models.GiphyData;
 import com.example.myact.api.models.GiphyResponse;
+import com.google.android.material.button.MaterialButton;
 
 import java.util.List;
 import java.util.Random;
@@ -25,7 +25,8 @@ public class RewardActivity extends AppCompatActivity {
 
     private ImageView imageViewGif;
     private ProgressBar progressBar;
-    private Button buttonClose;
+    private MaterialButton buttonContinue;
+    private TextView textViewCurrentDate;
     private ApiService apiService;
 
     // Celebratory search terms for Giphy
@@ -44,16 +45,10 @@ public class RewardActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_reward);
 
-        // Setup toolbar
-//        Toolbar toolbar = findViewById(R.id.toolbar);
-//        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setTitle("You did it!");
-
         // Initialize views
         imageViewGif = findViewById(R.id.image_view_gif);
         progressBar = findViewById(R.id.progress_bar);
-//        buttonClose = findViewById(R.id.button_close);
+        buttonContinue = findViewById(R.id.button_continue); // Changed from button_close to button_continue
 
         // Initialize API service
         apiService = new ApiClient();
@@ -61,8 +56,8 @@ public class RewardActivity extends AppCompatActivity {
         // Load a random celebratory GIF
         loadRandomGif();
 
-        // Setup close button
-        buttonClose.setOnClickListener(v -> finish());
+        // Setup continue button instead of close button
+        buttonContinue.setOnClickListener(v -> finish());
     }
 
     private void loadRandomGif() {

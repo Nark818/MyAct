@@ -29,7 +29,6 @@ import java.util.concurrent.Executors;
 
 public class StatisticsFragment extends Fragment {
 
-    private TextView textViewDate;
     private TextView textViewTotalTasks;
     private TextView textViewCompletedTasks;
     private TextView textViewActiveTasks;
@@ -51,7 +50,7 @@ public class StatisticsFragment extends Fragment {
         View view = inflater.inflate(R.layout.fragment_statistics, container, false);
 
         // Initialize views
-        textViewDate = view.findViewById(R.id.text_view_date);
+//        textViewDate = view.findViewById(R.id.text_view_date);
         textViewTotalTasks = view.findViewById(R.id.text_view_total_tasks);
         textViewCompletedTasks = view.findViewById(R.id.text_view_completed_tasks);
         textViewActiveTasks = view.findViewById(R.id.text_view_active_tasks);
@@ -72,19 +71,12 @@ public class StatisticsFragment extends Fragment {
         categoryStatAdapter = new CategoryStatAdapter(getContext());
         recyclerViewCategories.setAdapter(categoryStatAdapter);
 
-        // Display current date
-        displayCurrentDate();
-
         // Load statistics
         loadStatistics();
 
         return view;
     }
 
-    private void displayCurrentDate() {
-        // Display the user-provided current date
-        textViewDate.setText("2025-06-10 14:42:45");
-    }
 
     @Override
     public void onResume() {
