@@ -143,5 +143,3 @@ MyAct follows modern Android development practices:
 - Verify theme attributes in styles.xml
 - Test on multiple device sizes for responsive design
 
-
----
