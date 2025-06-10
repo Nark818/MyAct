@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+    Dialog for adding a new category
+    Created: 2025-06-10 15:12:57
+    Author: Nark818
+-->
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="24dp">
+
+    <TextView
+        android:id="@+id/text_view_title"
+        style="@style/TextAppearance.App.Headline6"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/add_new_category"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/til_category_name"
+        style="@style/Widget.App.TextInputLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:hint="@string/category_name"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_title">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="text"
+            android:maxLines="1" />
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <TextView
+        android:id="@+id/text_view_color_label"
+        style="@style/TextAppearance.App.Body2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/category_color"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/til_category_name" />
+
+    <HorizontalScrollView
+        android:id="@+id/scroll_view_colors"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:scrollbars="none"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/text_view_color_label">
+
+        <com.google.android.material.chip.ChipGroup
+            android:id="@+id/chip_group_colors"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:singleSelection="true">
+
+            <!-- Color chips will be added dynamically, but here are some examples -->
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_color_blue"
+                style="@style/Widget.App.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="#2196F3"
+                app:chipBackgroundColor="#2196F3"
+                app:chipIconTint="@android:color/white"
+                app:chipMinHeight="40dp"
+                app:chipMinTouchTargetSize="40dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_color_green"
+                style="@style/Widget.App.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="#4CAF50"
+                app:chipBackgroundColor="#4CAF50"
+                app:chipIconTint="@android:color/white"
+                app:chipMinHeight="40dp"
+                app:chipMinTouchTargetSize="40dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_color_red"
+                style="@style/Widget.App.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="#F44336"
+                app:chipBackgroundColor="#F44336"
+                app:chipIconTint="@android:color/white"
+                app:chipMinHeight="40dp"
+                app:chipMinTouchTargetSize="40dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_color_purple"
+                style="@style/Widget.App.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="#9C27B0"
+                app:chipBackgroundColor="#9C27B0"
+                app:chipIconTint="@android:color/white"
+                app:chipMinHeight="40dp"
+                app:chipMinTouchTargetSize="40dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_color_orange"
+                style="@style/Widget.App.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="#FF9800"
+                app:chipBackgroundColor="#FF9800"
+                app:chipIconTint="@android:color/white"
+                app:chipMinHeight="40dp"
+                app:chipMinTouchTargetSize="40dp" />
+
+            <com.google.android.material.chip.Chip
+                android:id="@+id/chip_color_teal"
+                style="@style/Widget.App.Chip.Choice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:tag="#009688"
+                app:chipBackgroundColor="#009688"
+                app:chipIconTint="@android:color/white"
+                app:chipMinHeight="40dp"
+                app:chipMinTouchTargetSize="40dp" />
+
+        </com.google.android.material.chip.ChipGroup>
+    </HorizontalScrollView>
+
+    <View
+        android:id="@+id/view_selected_color"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/shape_circle"
+        android:backgroundTint="#2196F3"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scroll_view_colors" />
+
+    <TextView
+        android:id="@+id/text_view_selected_color"
+        style="@style/TextAppearance.App.Body2"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="#2196F3"
+        app:layout_constraintBottom_toBottomOf="@+id/view_selected_color"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/view_selected_color"
+        app:layout_constraintTop_toTopOf="@+id/view_selected_color" />
+
+    <Button
+        android:id="@+id/button_cancel"
+        style="@style/Widget.App.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="@android:string/cancel"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button_save"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/view_selected_color" />
+
+    <Button
+        android:id="@+id/button_save"
+        style="@style/Widget.App.Button.TextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/save"
+        android:textColor="@color/colorAccent"
+        app:layout_constraintBottom_toBottomOf="@+id/button_cancel"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/button_cancel"
+        app:layout_constraintTop_toTopOf="@+id/button_cancel" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

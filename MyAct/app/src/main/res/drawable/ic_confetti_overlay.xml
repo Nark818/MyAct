@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="720dp"
+    android:height="1080dp"
+    android:viewportWidth="720"
+    android:viewportHeight="1080">
+
+    <!-- Several small confetti shapes scattered around -->
+    <path
+        android:pathData="M100,100L120,110L110,120Z"
+        android:fillColor="#419D78"
+        android:fillAlpha="0.5"/>
+
+    <path
+        android:pathData="M200,150L210,180L190,170Z"
+        android:fillColor="#FF9F1C"
+        android:fillAlpha="0.5"/>
+
+    <path
+        android:pathData="M500,200L520,210L510,230L490,220Z"
+        android:fillColor="#2196F3"
+        android:fillAlpha="0.5"/>
+
+    <!-- Add more confetti shapes throughout the canvas -->
+    <!-- This is a simplified example; a real confetti overlay would have many more elements -->
+
+</vector>
