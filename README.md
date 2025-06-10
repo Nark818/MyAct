@@ -1,145 +1,145 @@
-# MyAct - Task Management Application
-## Overview
+# MyAct - Aplikasi Manajemen Tugas
 
-MyAct is a modern Android task management application designed to help users track and organize their daily tasks. With an intuitive interface, customizable categories, and powerful filtering capabilities, MyAct makes task organization simple and efficient.
+## Ikhtisar
 
-## Features
+MyAct adalah aplikasi manajemen tugas Android modern yang dirancang untuk membantu pengguna melacak dan mengatur tugas harian mereka. Dengan antarmuka yang intuitif, kategori yang dapat disesuaikan, dan kemampuan penyaringan yang kuat, MyAct membuat pengorganisasian tugas menjadi sederhana dan efisien.
 
-### Task Management
-- Create, edit, and delete tasks
-- Set task priorities (Low, Medium, High)
-- Assign categories with custom colors
-- Set due dates for time-sensitive tasks
-- Mark tasks as completed
+## Fitur
 
-### Organization
-- Filter tasks by status (Active/Completed)
-- Filter tasks by priority
-- Filter tasks by category
-- Filter tasks by due date (Today, This Week, Overdue)
-- Search functionality for quick task lookup
+### Manajemen Tugas
+- Membuat, mengedit, dan menghapus tugas
+- Mengatur prioritas tugas (Rendah, Menengah, Tinggi)
+- Menetapkan kategori dengan warna kustom
+- Mengatur tenggat waktu untuk tugas yang sensitif terhadap waktu
+- Menandai tugas sebagai selesai
 
-### Statistics and Insights
-- Visual overview of task distribution
-- Task completion percentage
-- Task count by priority level
-- Task count by category
-- Active vs. completed task breakdown
+### Pengorganisasian
+- Filter tugas berdasarkan status (Aktif/Selesai)
+- Filter tugas berdasarkan prioritas
+- Filter tugas berdasarkan kategori
+- Filter tugas berdasarkan tenggat waktu (Hari ini, Minggu ini, Terlambat)
+- Fungsi pencarian untuk pencarian tugas yang cepat
 
-### User Experience
-- Material Design 3 UI components
-- Customizable themes (Light/Dark mode)
-- Swipe-to-refresh for task list updates
-- Modern bottom navigation
-- Celebration animations upon task completion
+### Statistik dan Wawasan
+- Gambaran visual tentang distribusi tugas
+- Persentase penyelesaian tugas
+- Jumlah tugas berdasarkan tingkat prioritas
+- Jumlah tugas berdasarkan kategori
+- Perbandingan tugas aktif dan selesai
 
-### Data Management
-- SQLite database for local storage
-- Backup and restore functionality
-- Default categories to get started quickly
+### Pengalaman Pengguna
+- Komponen UI Material Design 3
+- Tema yang dapat disesuaikan (Mode Terang/Gelap)
+- Geser-untuk-menyegarkan untuk pembaruan daftar tugas
+- Navigasi bawah modern
+- Animasi perayaan setelah menyelesaikan tugas
 
-## Architecture
+### Manajemen Data
+- Database SQLite untuk penyimpanan lokal
+- Fungsi cadangan dan pemulihan
+- Kategori default untuk memulai dengan cepat
 
-MyAct follows modern Android development practices:
+## Arsitektur
 
-### Project Structure
-- **activities**: Contains all activity classes
-- **adapters**: Contains RecyclerView adapters
-- **api.models**: Data model classes
-- **database**: Database helpers and contract classes
-- **fragments**: UI fragments
-- **utils**: Utility classes
+MyAct mengikuti praktik pengembangan Android modern:
 
-### Database Schema
+### Struktur Proyek
+- **activities**: Berisi semua kelas aktivitas
+- **adapters**: Berisi adapter RecyclerView
+- **api.models**: Kelas model data
+- **database**: Helper database dan kelas kontrak
+- **fragments**: Fragment UI
+- **utils**: Kelas utilitas
 
-#### Tasks Table
-| Column         | Type    | Description                            |
-|----------------|---------|----------------------------------------|
-| id             | INTEGER | Primary key                            |
-| title          | TEXT    | Task title                             |
-| description    | TEXT    | Task description                       |
-| due_date       | TEXT    | Due date in YYYY-MM-DD format          |
-| priority       | INTEGER | Priority level (1=Low, 2=Med, 3=High)  |
-| category_id    | INTEGER | Foreign key to categories table        |
-| is_completed   | INTEGER | Task completion status (0/1)           |
+### Skema Database
 
-#### Categories Table
-| Column  | Type    | Description                   |
-|---------|---------|-------------------------------|
-| id      | INTEGER | Primary key                   |
-| name    | TEXT    | Category name                 |
-| color   | TEXT    | Hex color code for category   |
+#### Tabel Tugas
+| Kolom          | Tipe    | Deskripsi                                |
+|----------------|---------|------------------------------------------|
+| id             | INTEGER | Kunci utama                              |
+| title          | TEXT    | Judul tugas                              |
+| description    | TEXT    | Deskripsi tugas                          |
+| due_date       | TEXT    | Tenggat waktu dalam format YYYY-MM-DD    |
+| priority       | INTEGER | Tingkat prioritas (1=Rendah, 2=Menengah, 3=Tinggi) |
+| category_id    | INTEGER | Kunci asing ke tabel kategori            |
+| is_completed   | INTEGER | Status penyelesaian tugas (0/1)          |
 
-## Key Components
+#### Tabel Kategori
+| Kolom   | Tipe    | Deskripsi                    |
+|---------|---------|------------------------------|
+| id      | INTEGER | Kunci utama                  |
+| name    | TEXT    | Nama kategori                |
+| color   | TEXT    | Kode warna hex untuk kategori|
 
-### Activities
-- **MainActivity**: Main application interface with bottom navigation
-- **SplashActivity**: Initial loading screen with motivational quotes
-- **TaskDetailActivity**: Create/edit task details
-- **RewardActivity**: Celebration screen shown when completing tasks
+## Komponen Utama
 
-### Fragments
-- **TaskListFragment**: Shows the list of tasks with filtering options
-- **StatisticsFragment**: Displays task statistics and insights
-- **SettingsFragment**: User preferences and app settings
+### Aktivitas
+- **MainActivity**: Antarmuka aplikasi utama dengan navigasi bawah
+- **SplashActivity**: Layar pemuatan awal dengan kutipan motivasi
+- **TaskDetailActivity**: Membuat/mengedit detail tugas
+- **RewardActivity**: Layar perayaan yang ditampilkan saat menyelesaikan tugas
 
-### Utilities
-- **ThemeManager**: Handles app theme switching
-- **NetworkUtils**: Network connectivity checking
-- **BackupRestoreHelper**: Database backup and restore operations
-- **TaskFilterSettings**: Manages task filtering preferences
+### Fragment
+- **TaskListFragment**: Menampilkan daftar tugas dengan opsi pemfilteran
+- **StatisticsFragment**: Menampilkan statistik tugas dan wawasan
+- **SettingsFragment**: Preferensi pengguna dan pengaturan aplikasi
 
-## Getting Started
+### Utilitas
+- **ThemeManager**: Menangani pengalihan tema aplikasi
+- **NetworkUtils**: Memeriksa konektivitas jaringan
+- **BackupRestoreHelper**: Operasi cadangan dan pemulihan database
+- **TaskFilterSettings**: Mengelola preferensi pemfilteran tugas
 
-### Prerequisites
-- Android Studio Arctic Fox (2020.3.1) or newer
-- Minimum SDK: Android 5.0 (API level 21)
-- Target SDK: Android 12 (API level 31)
+## Memulai
 
-### Setup Instructions
-1. Clone the repository or download the source code
-2. Open the project in Android Studio
-3. Sync Gradle files
-4. Run the application on an emulator or physical device
+### Prasyarat
+- Android Studio Arctic Fox (2020.3.1) atau lebih baru
+- SDK Minimum: Android 5.0 (API level 21)
+- SDK Target: Android 12 (API level 31)
 
-### Configuration
-- The app uses Material Components theme
-- Default categories are defined in TaskContract.DEFAULT_CATEGORIES
-- App preferences are stored using SharedPreferences
+### Instruksi Pengaturan
+1. Klon repositori atau unduh kode sumber
+2. Buka proyek di Android Studio
+3. Sinkronkan file Gradle
+4. Jalankan aplikasi pada emulator atau perangkat fisik
 
-## Best Practices Implemented
+### Konfigurasi
+- Aplikasi menggunakan tema Material Components
+- Kategori default didefinisikan dalam TaskContract.DEFAULT_CATEGORIES
+- Preferensi aplikasi disimpan menggunakan SharedPreferences
 
-- Singleton pattern for database access
-- Executor pattern for background operations
-- Proper database transaction management
-- Separation of concerns with contract classes
-- Responsive UI design
-- Efficient RecyclerView adapters
-- Material Design guidelines adherence
-- Background processing on separate threads
-- Proper resource organization
+## Praktik Terbaik yang Diterapkan
 
-## Future Enhancements
-- Cloud synchronization
-- Task sharing
-- Custom notifications
-- Calendar integration
-- Widgets for home screen
-- Subtasks and checklists
-- Recurring tasks
-- Time tracking
+- Pola Singleton untuk akses database
+- Pola Executor untuk operasi latar belakang
+- Manajemen transaksi database yang tepat
+- Pemisahan tugas dengan kelas kontrak
+- Desain UI yang responsif
+- Adapter RecyclerView yang efisien
+- Kepatuhan terhadap pedoman Material Design
+- Pemrosesan latar belakang pada thread terpisah
+- Pengorganisasian sumber daya yang tepat
 
-## Troubleshooting
+## Pengembangan Masa Depan
+- Sinkronisasi cloud
+- Berbagi tugas
+- Notifikasi kustom
+- Integrasi kalender
+- Widget untuk layar beranda
+- Subtugas dan daftar periksa
+- Tugas berulang
+- Pelacakan waktu
 
-### Common Issues
-- **Database Errors**: Try clearing app data or reinstalling
-- **Missing Categories**: Check database initialization in TaskDbHelper
-- **UI Glitches**: Ensure Material Components theme is properly applied
-- **Data Loss**: Use the backup functionality regularly
+## Pemecahan Masalah
 
-### Debugging Tips
-- Enable developer options for detailed logging
-- Check Logcat for database operation errors
-- Verify theme attributes in styles.xml
-- Test on multiple device sizes for responsive design
+### Masalah Umum
+- **Kesalahan Database**: Coba hapus data aplikasi atau instal ulang
+- **Kategori Hilang**: Periksa inisialisasi database di TaskDbHelper
+- **Glitch UI**: Pastikan tema Material Components diterapkan dengan benar
+- **Kehilangan Data**: Gunakan fungsi cadangan secara teratur
 
+### Tips Debugging
+- Aktifkan opsi pengembang untuk pencatatan yang detail
+- Periksa Logcat untuk kesalahan operasi database
+- Verifikasi atribut tema di styles.xml
+- Uji pada berbagai ukuran perangkat untuk desain responsif
